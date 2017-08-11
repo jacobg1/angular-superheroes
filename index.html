@@ -22,6 +22,20 @@
         <p>Affiliation: {{hero.comics_affiliation}}</p>
         <br>
         <hr>
+        <button ng-click="edit = true">Edit Hero</button>
+
+        <div ng-show="edit">
+          <label for="name-input">name</label>
+          <input type="text" ng-model="vm.editName">
+          <label for="phone_number-input">number</label>
+          <input type="text" ng-model="vm.editNumber">
+          <label for="affiliation-input">affiliation</label>
+          <input type="text" ng-model="vm.editAffiliation">
+          <label for="img-input">picture</label>
+          <input type="text" ng-model="vm.editPic">
+          <button ng-click="vm.editHero(hero)">Submit Changes</button>
+
+        </div>
       </div>
     </ul>
   </section>

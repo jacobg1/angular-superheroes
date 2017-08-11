@@ -15,6 +15,7 @@
     ]
 
     this.addHero = addHero
+    this.editHero = editHero
 
     function addHero () {
       const newHero = {
@@ -25,6 +26,12 @@
       }
       this.heros.push(newHero)
       this.newHero = ''
+    }
+    function editHero (i) {
+      i.name = this.editName
+      i.phone_number = this.editNumber
+      i.comics_affiliation = this.editAffiliation
+      i.img_url = this.editPic
     }
   }
 })()
