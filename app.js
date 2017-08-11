@@ -12,7 +12,19 @@
       { name: 'Luke Cage', phone_number: '1-800-badass', comics_affiliation: 'DC', img_url: 'http://img06.deviantart.net/ccfc/i/2016/212/e/0/luke_cage___transparent_by_natan_ferri-dabq2zh.png' },
       { name: 'super man', phone_number: '1-800-worst-hero', comics_affiliation: 'DC', img_url: 'http://www.pngmart.com/files/2/Superman-Transparent-Background.png' },
       { name: 'silver surfer', phone_number: '1-800-destruction', comics_affiliation: 'DC', img_url: 'http://animeonly.org/albums/2007_04_30/Games/Silver_Surfer_2.png' }
-
     ]
+
+    this.addHero = addHero
+
+    function addHero () {
+      const newHero = {
+        name: this.newHero,
+        phone_number: this.newNumber,
+        comics_affiliation: this.affiliation,
+        img_url: this.pic
+      }
+      this.heros.push(newHero)
+      this.newHero = ''
+    }
   }
 })()

@@ -7,8 +7,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
   <script src="app.js"></script>
 </head>
-<body>
-  <section ng-controller="superHerosController as vm">
+<body ng-controller="superHerosController as vm">
+  <section>
     <ul>
       <h1>Search HEROS</h1>
       <input type="text" ng-model="searchheros.names">
@@ -24,6 +24,18 @@
         <hr>
       </div>
     </ul>
+  </section>
+  <section>
+    <h2>New Hero</h2>
+    <label for="name-input">name</label>
+    <input type="text" id="name-input" ng-model="vm.newHero">
+    <label for="phone_number-input">number</label>
+    <input type="text" id="phone_number-input" ng-model="vm.newNumber">
+    <label for="affiliation-input">affiliation</label>
+    <input type="text" id="affiliation-input" ng-model="vm.affiliation">
+    <label for="img-input">picture</label>
+    <input type="text" id="img-input" ng-model="vm.pic">
+    <button ng-click="vm.addHero()">Add Hero!</button>
   </section>
 </body>
 </html>
