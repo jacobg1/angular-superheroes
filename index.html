@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="superApp">
 <head>
   <meta charset="UTF-8">
   <title>Superhero Phone Book</title>
@@ -8,5 +8,22 @@
   <script src="app.js"></script>
 </head>
 <body>
+  <section ng-controller="superHerosController as vm">
+    <ul>
+      <h1>Search HEROS</h1>
+      <input type="text" ng-model="searchheros.names">
+      <br>
+      <hr>
+      <div ng-repeat="hero in vm.heros | filter: searchheros.names" ng-class="{ 'dcColor' : hero.comics_affiliation === 'DC', 'marvelColor' : hero.comics_affiliation === 'marvel' }">
+        <img ng-src="{{hero.img_url}}" ng-show="vm.viewImage[$index]"/>
+        <p>super hero: {{hero.name}}</p>
+        <button ng-click="vm.viewImage[$index] = !vm.viewImage[$index]">show pic</button>
+        <p>Number: {{hero.phone_number}}</p>
+        <p>Affiliation: {{hero.comics_affiliation}}</p>
+        <br>
+        <hr>
+      </div>
+    </ul>
+  </section>
 </body>
 </html>
